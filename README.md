@@ -22,8 +22,8 @@ The template logindefs.erb is used by the umask (vulnerability) recipes and
 replaces /etc/login.defs after the substitutions are made.
 
 #### Variables
-* umask The value for the umask setting
-* usergroups The value for the USERGROUPS_ENAB setting
+* `umask` The value for the umask setting
+* `usergroups` The value for the USERGROUPS_ENAB setting
 
 ## Usage
 ### unsafe_umask::default
