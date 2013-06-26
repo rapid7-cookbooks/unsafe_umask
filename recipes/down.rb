@@ -1,4 +1,4 @@
-# Hack. http://tickets.opscode.com/browse/CHEF-3304
+# NOTE: This is a work around for http://tickets.opscode.com/browse/CHEF-3304
 Encoding.default_external = Encoding::UTF_8 if RUBY_VERSION > '1.9'
 
 template '/etc/login.defs' do
