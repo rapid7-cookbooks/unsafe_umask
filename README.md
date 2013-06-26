@@ -11,29 +11,27 @@ only be detected with an authenticated scan.
 
 ## Attributes
 ### unsafe_umask::default
-* `node['unsafe_umask']['umask']['unsafe']` Vulnerable value of umask in login.defs file, defaults to 022
-* `node['unsafe_umask']['umask']['safe']` Secure value of umask in login.defs file, defaults to 022
-* `node['unsafe_umask']['usergroups']['unsafe']` Vulnerable value for USERGROUPS_ENAB in login.defs file, defaults to yes
-* `node['unsafe_umask']['usergroups']['safe']` Secure value of USERGROUPS_ENAB in login.defs file, defaults to no
+* `node[:unsafe_umask][:safe]` Whether to secure the node's umask,
+  defaults to true
+* `node[:unsafe_umask][:umask]` Value of umask in `login.defs` file,
+  defaults to 077
+* `node[:unsafe_umask][:user_groups']` Value for USERGROUPS_ENAB in
+  `login.defs` file, defaults to no
 
 ## Templates
 ### logindefs.erb
 The template logindefs.erb is used by the umask (vulnerability) recipes and 
-replaces /etc/login.defs after the substitutions are made.
+replaces `/etc/login.defs` after the substitutions are made.
 
 #### Variables
 * `umask` The value for the umask setting
-* `usergroups` The value for the USERGROUPS_ENAB setting
+* `user_groups` The value for the USERGROUPS_ENAB setting
 
 ## Usage
 ### unsafe_umask::default
-Includes the `unsafe_umask::up` recipe.
-
-### unsafe_umask::up
-Perform 'unsafe' substitutions on logindefs.erb and replaces /etc/login.defs</td>
-
-### unsafe_umask::down
-Perform 'safe' substitutions on logindefs.erb and replaces /etc/login.defs</td>
+Perform safe or unsafe substitutions on logindefs.erb and replaces
+`/etc/login.defs` with the rendered
+[template](templates/default/logindefs.erb).
 
 License and Authors
 -------------------
