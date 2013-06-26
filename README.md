@@ -11,10 +11,10 @@ only be detected with an authenticated scan.
 
 ## Attributes
 ### unsafe_umask::default
-* node['unsafe_umask']['umask']['unsafe'] Vulnerable value of umask in login.defs file, defaults to 022
-* node['unsafe_umask']['umask']['safe'] Secure value of umask in login.defs file, defaults to 022
-* node['unsafe_umask']['usergroups']['unsafe'] Vulnerable value for USERGROUPS_ENAB in login.defs file, defaults to yes
-* node['unsafe_umask']['usergroups']['safe'] Secure value of USERGROUPS_ENAB in login.defs file, defaults to no
+* `node['unsafe_umask']['umask']['unsafe']` Vulnerable value of umask in login.defs file, defaults to 022
+* `node['unsafe_umask']['umask']['safe']` Secure value of umask in login.defs file, defaults to 022
+* `node['unsafe_umask']['usergroups']['unsafe']` Vulnerable value for USERGROUPS_ENAB in login.defs file, defaults to yes
+* `node['unsafe_umask']['usergroups']['safe']` Secure value of USERGROUPS_ENAB in login.defs file, defaults to no
 
 ## Templates
 ### logindefs.erb
