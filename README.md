@@ -38,4 +38,5 @@ Perform 'safe' substitutions on logindefs.erb and replaces /etc/login.defs</td>
 License and Authors
 -------------------
 Authors: William Sharar, Erran Carey
+
 License: Copyright 2013, Rapid7. All rights reserved - Do Not Redistribute.
