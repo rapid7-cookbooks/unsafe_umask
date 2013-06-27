@@ -1,4 +1,6 @@
 # Unsafe Umask
+[![Build Status](https://secure.travis-ci.org/rapid7-cookbooks/unsafe_umask.png)](http://travis-ci.org/rapid7-cookbooks/unsafe_umask)
+## Description
 This cookbook contains recipes that, when applied, make an Ubuntu node
 vulnerable. In this case, the vulnerability is an unsafe UNIX umask, which should 
 only be detected with an authenticated scan.
