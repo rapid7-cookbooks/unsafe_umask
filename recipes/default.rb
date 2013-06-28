@@ -11,7 +11,6 @@
 Encoding.default_external = Encoding::UTF_8 if RUBY_VERSION > '1.9'
 
 template '/etc/login.defs' do
-  source 'logindefs.erb'
   mode '644'
   owner 'root'
   group 'root'
