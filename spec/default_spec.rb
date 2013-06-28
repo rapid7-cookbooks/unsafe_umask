@@ -10,7 +10,10 @@ platforms.each do |platform, versions|
   versions.each do |version|
     describe "On #{platform} (#{version})" do
       let(:chef_run) do
-        ChefSpec::ChefRunner.new(platform: platform, version: version).converge('unsafe_umask::default')
+        # NOTE: I can't use the Symbol syntax for ChefSpec::ChefRunner due to a TypeError (Symbol vs. String)
+        # TODO: Open an issue @ acrmp/chefspec
+        # ChefSpec::ChefRunner.new(platform: platform, version: version).converge('unsafe_umask::default')
+        ChefSpec::ChefRunner.new( 'platform' => platform, 'version' => version).converge('unsafe_umask::default')
       end
 
       it "creates /etc/login.defs from the template login.defs.erb" do
